@@ -1,0 +1,38 @@
+@import "../../style/style.scss";
+
+.header {
+  @include flex(space-between);
+  padding: 10px 0px;
+
+  &__logo img {
+    height: 30px;
+
+    @include screen($tablet) {
+      height: 45px;
+    }
+  }
+
+  &__search {
+    height: 45px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+
+    input {
+      background-color: $background-color;
+    }
+  }
+
+  &__submit {
+    width: 45px;
+    height: 45px;
+    color: $white-color;
+    background-color: $button-color;
+  }
+
+  &__icon a {
+    color: $icon-color;
+    font-size: 1.4rem;
+    margin-left: 20px;
+  }
+}
