@@ -59,7 +59,7 @@ html {overflow-y: scroll;}
 
 /* we use a lot of ULs that aren't bulleted.
 	don't forget to restore the bullets within content. */
-ul {list-style: none;}
+ul, li {list-style: none;}
 
 blockquote, q {quotes: none;}
 
@@ -68,7 +68,7 @@ blockquote:after,
 q:before,
 q:after {content: ''; content: none;}
 
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none;}
 
 del {text-decoration: line-through;}
 
