@@ -25,7 +25,11 @@ export const fetchProducts = createAsyncThunk(
 const productReducer = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    setPagination: (state, action) => {
+      state.filter._page = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -43,4 +47,5 @@ const productReducer = createSlice({
   },
 });
 
+export const { setPagination } = productReducer.actions;
 export default productReducer.reducer;

@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../store/Slice/productSlice";
 import ProductItem from "./ProductItem";
 import { Container } from "react-bootstrap";
+import PaginationComponent from "../../Pagination";
 
 function Products() {
-  const { isLoading, products, filter } = useSelector(
+  const { isLoading, products, filter, totalCount } = useSelector(
     (state) => state.productReducer
   );
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function Products() {
             ))
           )}
         </div>
+        <PaginationComponent totalCount={totalCount} filter={filter} />
       </Container>
     </main>
   );
