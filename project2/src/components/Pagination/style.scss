@@ -1,0 +1,18 @@
+@import "../../style/style.scss";
+
+.section__pagination {
+    @include flex;
+    padding: 30px;
+    border-bottom: 1px solid $border-color;
+    background-color: $background-color;
+
+    .page-link {
+        color: $button-color;
+    }
+
+    .active .page-link {
+        background-color: $button-color;
+        border-color: $button-color;
+        color: $white-color;
+    }
+}
