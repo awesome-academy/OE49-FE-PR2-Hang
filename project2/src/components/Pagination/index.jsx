@@ -61,6 +61,7 @@ function PaginationComponent(props) {
           />
 
           <Pagination.Item
+            hidden={pageCount === 1}
             active={page === pageCount}
             onClick={() => dispatch(setPagination(pageCount))}
           >
