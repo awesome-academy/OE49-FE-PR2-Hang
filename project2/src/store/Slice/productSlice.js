@@ -11,6 +11,9 @@ const initialState = {
   filter: {
     _page: 1,
     _limit: 12,
+    _sort: "",
+    _order: "",
+    title_like: "",
     category_like: "",
     brand_like: [],
   },
@@ -77,6 +80,15 @@ const productReducer = createSlice({
     setRating: (state, action) => {
       state.filter.rating_gte = action.payload;
     },
+
+    searchProducts: (state, action) => {
+      state.filter.title_like = action.payload;
+    },
+
+    sortProducts: (state, action) => {
+      state.filter._sort = action.payload.sort;
+      state.filter._order = action.payload.order;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -126,5 +138,7 @@ export const {
   unsetBrand,
   setPrice,
   setRating,
+  searchProducts,
+  sortProducts,
 } = productReducer.actions;
 export default productReducer.reducer;

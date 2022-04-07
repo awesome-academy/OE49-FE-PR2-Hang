@@ -1,13 +1,9 @@
 import "./style.scss";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faShoppingCart,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import Search from "../Filter/Search";
 
 function Header() {
   return (
@@ -16,14 +12,7 @@ function Header() {
         <Link to="/" className="header__logo">
           <img src={logo} alt="logo" />
         </Link>
-        <form className="header__form w-50">
-          <InputGroup className="header__search">
-            <FormControl id="search" placeholder="Tìm kiếm" />
-            <Button variant="btn header__submit" type="submit">
-              <FontAwesomeIcon icon={faSearch} />
-            </Button>
-          </InputGroup>
-        </form>
+        <Search />
         <div className="header__icon">
           <Link to="/">
             <FontAwesomeIcon icon={faShoppingCart} />
