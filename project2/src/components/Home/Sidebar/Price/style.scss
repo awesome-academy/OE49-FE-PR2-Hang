@@ -1,0 +1,17 @@
+@import "../../../../style/style.scss";
+
+.price {
+    &__input {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    &__btn {
+        color: $white-color;
+        background-color: $button-color;
+
+        &:hover {
+            color: $white-color;
+        }
+    }
+}

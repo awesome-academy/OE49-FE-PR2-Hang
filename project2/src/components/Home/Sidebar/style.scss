@@ -1,0 +1,14 @@
+@import "../../../style/style.scss";
+
+.sidebar {
+    height: 100%;
+    padding: 15px;
+
+    &__title{
+        font-size: 1.2rem;
+        font-weight: $fw-bold;
+        padding: 15px 0px;
+        margin-top: 15px;
+        border-top: 1px solid $border-color;
+    }
+}
