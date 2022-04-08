@@ -1,0 +1,32 @@
+@import "../../style/style.scss";
+
+.signup {
+  background-color: $background-color;
+  padding: 20px;
+
+  &__wrap {
+    @include screen($tablet) {
+      width: 75%;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+  }
+
+  &__form {
+    background-color: $white-color;
+    padding: 30px;
+  }
+
+  &__submit {
+    background-color: $button-color !important;
+    border-color: $button-color !important;
+    text-transform: uppercase;
+
+    &:focus,
+    &:active:focus {
+      box-shadow: none;
+    }
+  }
+}
