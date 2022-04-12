@@ -2,21 +2,23 @@ import "./style.scss";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { sortProducts } from "../../../store/Slice/productSlice";
+import { useTranslation } from "react-i18next";
 
 function Sort() {
   const dispatch = useDispatch();
-  const options = ["Phù hợp nhất", "Giá tăng dần", "Giá giảm dần"];
+  const { t } = useTranslation();
+  const options = ["best match", "price low to high", "price high to low"];
 
   const selectItem = options.map((option, index) => (
     <option value={option} key={index} className="p-3">
-      {option}
+      {t(option)}
     </option>
   ));
 
   const result = {
-    "Phù hợp nhất": { sort: "", order: "" },
-    "Giá tăng dần": { sort: "price", order: "asc" },
-    "Giá giảm dần": { sort: "price", order: "desc" },
+    "best match": { sort: "", order: "" },
+    "price low to high": { sort: "price", order: "asc" },
+    "price high to low": { sort: "price", order: "desc" },
   };
 
   function handleChange(value) {
@@ -26,7 +28,7 @@ function Sort() {
   return (
     <form className="form-sort">
       <label className="input-group align-items-center">
-        Sắp xếp theo:
+        {t("order by")}:
         <select
           className="form-select ms-3"
           onChange={(e) => handleChange(e.target.value)}

@@ -7,12 +7,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import PaginationComponent from "../../Pagination";
 import Sidebar from "../Sidebar";
 import Sort from "../../Filter/Sort";
+import { useTranslation } from "react-i18next";
 
 function Products() {
   const { isLoading, products, filter, totalCount } = useSelector(
     (state) => state.productReducer
   );
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(fetchProducts(filter));
@@ -26,9 +28,11 @@ function Products() {
             <Sidebar />
           </Col>
           <Col md={9} lg={10} className="position-relative">
-            <h1 className="title">Sản phẩm nổi bật</h1>
+            <h1 className="title">{t("featured products")}</h1>
             <Sort />
-            <p className="pb-4">{totalCount} sản phẩm phù hợp</p>
+            <p className="pb-4">
+              {totalCount} {t("items found")}
+            </p>
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 product__list">
               {isLoading ? (
                 <div>Loading...</div>

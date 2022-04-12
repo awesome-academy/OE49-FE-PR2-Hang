@@ -6,11 +6,13 @@ import {
   fetchBrands,
   setBrand,
 } from "../../../../store/Slice/productSlice";
+import { useTranslation } from "react-i18next";
 
 function Brand() {
   const [open, setOpen] = useState(false);
   const { brands } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(fetchBrands());
@@ -34,7 +36,7 @@ function Brand() {
 
   return (
     <div className="brand">
-      <h1 className="sidebar__title">Thương hiệu</h1>
+      <h1 className="sidebar__title">{t("brand")}</h1>
       {brands &&
         brands.map(
           (brand, index) =>
@@ -45,7 +47,7 @@ function Brand() {
             )
         )}
       <Link to="/" onClick={() => setOpen(!open)}>
-        {open ? "Thu gọn" : " Xem thêm"}
+        {open ? t("view less") : t("view more")}
       </Link>
     </div>
   );

@@ -4,12 +4,14 @@ import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { useDebouncedCallback } from "use-debounce";
 import { useDispatch } from "react-redux";
 import { searchProducts } from "../../../store/Slice/productSlice";
+import { useTranslation } from "react-i18next";
 
 function Search() {
   const dispatch = useDispatch();
   const debounced = useDebouncedCallback((value) => {
     dispatch(searchProducts(value.trim()));
   }, 300);
+  const { t } = useTranslation();
 
   return (
     <form
@@ -19,7 +21,7 @@ function Search() {
       <InputGroup className="header__search">
         <FormControl
           type="text"
-          placeholder="Tìm kiếm"
+          placeholder={t("search")}
           onChange={(event) => debounced(event.target.value)}
         />
         <Button variant="btn header__submit" type="submit">
