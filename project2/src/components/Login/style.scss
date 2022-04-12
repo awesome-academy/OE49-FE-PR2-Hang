@@ -1,0 +1,7 @@
+@import "../../style/style.scss";
+
+.login__wrap {
+  @include screen($desktop) {
+    width: 40%;
+  }
+}

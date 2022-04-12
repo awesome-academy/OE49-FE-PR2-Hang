@@ -7,9 +7,11 @@ import { email_regex, password_regex } from "../../constants";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/Slice/userSlice";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const formik = useFormik({
@@ -38,6 +40,7 @@ function SignUp() {
       const { username, email, password } = values;
       localStorage.setItem("user", JSON.stringify({ username, email }));
       dispatch(signup({ username, email, password }));
+      navigate('/login');
     },
   });
 

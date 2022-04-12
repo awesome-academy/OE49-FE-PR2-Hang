@@ -25,5 +25,8 @@
   "required name": "The name length should be 2 - 50 characters.",
   "required password": "Password must be at least 6 characters, contain numbers, uppercase and lowercase letters",
   "error confirm password": "Password does not match",
-  "sign up": "Sign Up"
+  "sign up": "Sign Up",
+  "welcome login": "Welcome to Lazada! Please login.",
+  "login": "Login",
+  "error login": "Incorrect username or password."
 }
