@@ -31,8 +31,23 @@
   }
 
   &__icon a {
+    position: relative;
     color: $icon-color;
     font-size: 1.4rem;
     margin-left: 20px;
+  }
+
+  &__cart::after{
+    @include flex;
+    content: attr(data-total-cart);
+    background-color: $button-color;
+    color: $white-color;
+    position: absolute;
+    top: -10px;
+    right: -60px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.8rem;
   }
 }

@@ -86,8 +86,9 @@ const productReducer = createSlice({
     },
 
     sortProducts: (state, action) => {
-      state.filter._sort = action.payload.sort;
-      state.filter._order = action.payload.order;
+      const {sort, order} = action.payload;
+      state.filter._sort = sort;
+      state.filter._order = order;
     },
   },
   extraReducers: (builder) => {
