@@ -10,8 +10,10 @@ import {
 import Search from "../Filter/Search";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const { total } = useSelector((state) => state.cartReducer);
   const [language, setLanguage] = useState("en");
   const { i18n } = useTranslation();
 
@@ -28,8 +30,13 @@ function Header() {
         </Link>
         <Search />
         <div className="header__icon">
-          <Link to="#" onClick={() => changeLanguage(language)}>
-            <FontAwesomeIcon icon={faGlobe} className="mx-2"/>
+          <Link
+            to="#"
+            className="header__cart"
+            data-total-cart={total}
+            onClick={() => changeLanguage(language)}
+          >
+            <FontAwesomeIcon icon={faGlobe} className="mx-2" />
             {language}
           </Link>
           <Link to="/">
