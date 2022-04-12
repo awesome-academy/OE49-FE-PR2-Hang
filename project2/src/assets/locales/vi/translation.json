@@ -25,5 +25,8 @@
   "required name": "Độ dài phải từ 2 - 50 kí tự",
   "required password": "Mật khẩu tối thiểu 6 kí tự, bao gồm số, chữ hoa, chữ thường",
   "error confirm password": "Mật khẩu không trùng khớp",
-  "sign up": "Đăng ký"
+  "sign up": "Đăng ký",
+  "welcome login": "Chào mừng đến với Lazada. Đăng nhập ngay!",
+  "login": "Đăng nhập",
+  "error login": "Tên đăng nhập hoặc mật khẩu không đúng."
 }

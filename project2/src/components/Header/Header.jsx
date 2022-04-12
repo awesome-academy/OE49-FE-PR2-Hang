@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 function Header() {
-  const [language, setLanguage] = useState("vi");
+  const [language, setLanguage] = useState("en");
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
