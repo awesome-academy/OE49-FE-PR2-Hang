@@ -37,5 +37,16 @@
   "continue shopping": "Continue shopping",
   "modal title delete": "Remove from cart",
   "modal body delete": "Item(s) will be removed from order",
-  "modal body delete all": "Are you sure you want to delete all item(s)?"
+  "modal body delete all": "Are you sure you want to delete all item(s)?",
+  "summary title": "Order Summary",
+  "summary money": "Subtotal",
+  "shipping fee": "Shipping Fee",
+  "total": "Total",
+  "vat": "VAT included, where applicable",
+  "confirm cart": "Confirm cart",
+  "payment": "Payment",
+  "shipping address": "Shipping Address",
+  "back": "Back",
+  "phone number": "Phone Number",
+  "required phone": "Please enter a valid phone number"
 }

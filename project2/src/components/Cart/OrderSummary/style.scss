@@ -1,0 +1,41 @@
+@import "../../../style/style.scss";
+
+.summary {
+  background-color: $white-color;
+  color: $gray-color;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &__title {
+    font-size: 1.2rem;
+    color: $black-color;
+  }
+
+  &__item {
+    @include flex(space-between, flex-start);
+    padding-top: 15px;
+    text-align: right;
+
+    .price {
+      color: $black-color;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      color: $button-color;
+    }
+  }
+
+  &__vat {
+    font-size: 0.8rem;
+  }
+
+  &__confirm,
+  &__confirm:hover {
+    background-color: $button-color;
+    color: $white-color;
+    text-transform: uppercase;
+    width: 100%;
+  }
+}
