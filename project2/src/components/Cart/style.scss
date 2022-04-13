@@ -1,0 +1,31 @@
+@import "../../style/style.scss";
+
+.cart {
+  background-color: $background-color;
+
+  .table {
+    margin: 10px;
+
+    thead {
+      background-color: $white-color;
+
+      th {
+        vertical-align: middle;
+      }
+    }
+
+    tbody {
+      background-color: $white-color;
+      border-top: 10px solid $background-color;
+    }
+  }
+
+  &__delete {
+    color: $gray-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $button-color;
+    }
+  }
+}
