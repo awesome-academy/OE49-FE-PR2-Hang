@@ -11,9 +11,11 @@ import Search from "../Filter/Search";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { totalProducts } from "../../utils";
 
 function Header() {
-  const { total } = useSelector((state) => state.cartReducer);
+  const { products } = useSelector((state) => state.cartReducer);
+  const total = totalProducts(products);
   const [language, setLanguage] = useState("en");
   const { i18n } = useTranslation();
 
@@ -30,16 +32,11 @@ function Header() {
         </Link>
         <Search />
         <div className="header__icon">
-          <Link
-            to="#"
-            className="header__cart"
-            data-total-cart={total}
-            onClick={() => changeLanguage(language)}
-          >
+          <Link to="#" onClick={() => changeLanguage(language)}>
             <FontAwesomeIcon icon={faGlobe} className="mx-2" />
             {language}
           </Link>
-          <Link to="/">
+          <Link to="/cart" className="header__cart" data-total-cart={total}>
             <FontAwesomeIcon icon={faShoppingCart} />
           </Link>
           <Link to="/signup">

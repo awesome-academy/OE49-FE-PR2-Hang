@@ -28,5 +28,14 @@
   "sign up": "Sign Up",
   "welcome login": "Welcome to Lazada! Please login.",
   "login": "Login",
-  "error login": "Incorrect username or password."
+  "error login": "Incorrect username or password.",
+  "all products": "All",
+  "product": "products",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "no product": "There are no items in this cart.",
+  "continue shopping": "Continue shopping",
+  "modal title delete": "Remove from cart",
+  "modal body delete": "Item(s) will be removed from order",
+  "modal body delete all": "Are you sure you want to delete all item(s)?"
 }

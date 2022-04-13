@@ -28,5 +28,14 @@
   "sign up": "Đăng ký",
   "welcome login": "Chào mừng đến với Lazada. Đăng nhập ngay!",
   "login": "Đăng nhập",
-  "error login": "Tên đăng nhập hoặc mật khẩu không đúng."
+  "error login": "Tên đăng nhập hoặc mật khẩu không đúng.",
+  "all products": "Tất cả",
+  "product": "sản phẩm",
+  "delete": "Xóa",
+  "cancel": "Hủy bỏ",
+  "no product": "Chưa có sản phẩm.",
+  "continue shopping": "Tiếp tục mua hàng",
+  "modal title delete": "Xóa khỏi giỏ hàng",
+  "modal body delete": "Bạn có đồng ý loại bỏ sản phẩm này khỏi đơn hàng?",
+  "modal body delete all": "Bạn có chắc chắn muốn xóa tất cả sản phẩm không?"
 }
