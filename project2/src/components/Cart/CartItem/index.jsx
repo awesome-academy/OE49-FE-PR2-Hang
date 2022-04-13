@@ -9,12 +9,12 @@ import { useDispatch } from "react-redux";
 import { deleteProduct, updateQuantity } from "../../../store/Slice/cartSlice";
 import { useTranslation } from "react-i18next";
 import ModalComponent from "../../Modal";
-import { useShowModal } from "../../../hooks/useModal";
+import { useToggle } from "../../../hooks/useToggle";
 
 function CartItem(props) {
   const { id, title, thumbnail, price, quantity } = props;
   const [value, setValue] = useState(quantity);
-  const [show, setShow] = useShowModal();
+  const [show, setShow] = useToggle();
   const dispatch = useDispatch();
   const { t } = useTranslation();
 

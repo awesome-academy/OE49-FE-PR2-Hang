@@ -16,3 +16,10 @@ export const getDataFromLocalStorage = (key) => {
     console.log(e);
   }
 };
+
+export const totalMoney = (products) => {
+  return products.reduce(
+    (total, product) => +product.quantity * +product.price + total,
+    0
+  );
+};

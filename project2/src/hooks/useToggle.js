@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export const useShowModal = (initialState = false) => {
+export const useToggle = (initialState = false) => {
   const [state, setState] = useState(initialState);
   const show = useCallback(() => setState((state) => !state), []);
 

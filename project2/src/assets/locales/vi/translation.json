@@ -37,5 +37,16 @@
   "continue shopping": "Tiếp tục mua hàng",
   "modal title delete": "Xóa khỏi giỏ hàng",
   "modal body delete": "Bạn có đồng ý loại bỏ sản phẩm này khỏi đơn hàng?",
-  "modal body delete all": "Bạn có chắc chắn muốn xóa tất cả sản phẩm không?"
+  "modal body delete all": "Bạn có chắc chắn muốn xóa tất cả sản phẩm không?",
+  "summary title": "Thông tin đơn hàng",
+  "summary money": "Tạm tính",
+  "shipping fee": "Phí giao hàng",
+  "total": "Tổng cộng",
+  "vat": "Đã bao gồm VAT (nếu có)",
+  "confirm cart": "Xác nhận giỏ hàng",
+  "payment": "Thanh toán",
+  "shipping address": "Địa chỉ giao hàng",
+  "back": "Quay lại",
+  "phone number": "Số điện thoại",
+  "required phone": "Vui lòng nhập số điện thoại hợp lệ"
 }

@@ -9,10 +9,11 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import ModalComponent from "../Modal";
 import { totalProducts } from "../../utils";
-import { useShowModal } from "../../hooks/useModal";
+import { useToggle } from "../../hooks/useToggle";
+import OrderSummary from "./OrderSummary";
 
 function Cart() {
-  const [show, setShow] = useShowModal();
+  const [show, setShow] = useToggle();
   const { products } = useSelector((state) => state.cartReducer);
   const total = totalProducts(products);
   const dispatch = useDispatch();
@@ -53,7 +54,9 @@ function Cart() {
                 </tbody>
               </Table>
             </Col>
-            <Col lg={4}></Col>
+            <Col lg={4}>
+              <OrderSummary />
+            </Col>
           </Row>
         ) : (
           <div className="text-center py-5">
