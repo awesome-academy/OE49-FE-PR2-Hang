@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { formatMoney, getDataFromLocalStorage, totalMoney } from "../../../utils";
 import "./style.scss";
 
-function OrderSummary() {
+function OrderSummary(props) {
+  const { label, link, onClick } = props;
   const { t } = useTranslation();
   const cart = getDataFromLocalStorage("cart");
   const { products } = cart;
@@ -28,8 +29,8 @@ function OrderSummary() {
           <p className="summary__vat">{t("vat")}</p>
         </div>
       </div>
-      <Link to="/payment" className="btn summary__confirm my-3">
-        {t("payment")}
+      <Link to={link} onClick={onClick} className="btn summary__confirm my-3">
+        {t(label)}
       </Link>
     </div>
   );

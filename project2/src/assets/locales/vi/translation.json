@@ -48,5 +48,13 @@
   "shipping address": "Địa chỉ giao hàng",
   "back": "Quay lại",
   "phone number": "Số điện thoại",
-  "required phone": "Vui lòng nhập số điện thoại hợp lệ"
+  "required phone": "Vui lòng nhập số điện thoại hợp lệ",
+  "quantity": "Số lượng",
+  "shipped by": "Được giao bởi",
+  "package": "Gói hàng",
+  "edit": "Chỉnh sửa",
+  "confirm order": "Xác nhận đơn hàng",
+  "order": "Đặt hàng",
+  "payment method": "Phương thức thanh toán",
+  "payment on delivery": "Thanh toán khi nhận hàng"
 }

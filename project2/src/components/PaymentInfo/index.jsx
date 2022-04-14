@@ -12,12 +12,13 @@ function PaymentInfo() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const user = getDataFromLocalStorage("user");
-  const { username, email, phone, address } = user;
+  const paymentInfo = getDataFromLocalStorage("payment-info") || {};
+  const { username, email, phone, address } = paymentInfo;
 
   const formik = useFormik({
     initialValues: {
-      email: email,
-      username: username,
+      email: email || user.email,
+      username: username || user.username,
       phone: phone || "",
       address: address || "",
     },
@@ -35,8 +36,11 @@ function PaymentInfo() {
       address: Yup.string().required(t("required information")),
     }),
     onSubmit: () => {
-      localStorage.setItem("payment-info", JSON.stringify({ ...formik.values }));
-      //   navigate("/confirm");
+      localStorage.setItem(
+        "payment-info",
+        JSON.stringify({ ...formik.values })
+      );
+      navigate("/confirm-order");
     },
   });
 

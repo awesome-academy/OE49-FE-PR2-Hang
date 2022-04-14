@@ -2,6 +2,8 @@ export const PRODUCT_API_URL = "http://localhost:3000/products";
 
 export const USER_API_URL = "http://localhost:3000/users";
 
+export const ORDER_API_URL = "http://localhost:3000/orders";
+
 export const phone_regex =
   /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
 
