@@ -48,5 +48,13 @@
   "shipping address": "Shipping Address",
   "back": "Back",
   "phone number": "Phone Number",
-  "required phone": "Please enter a valid phone number"
+  "required phone": "Please enter a valid phone number",
+  "quantity": "Quantity",
+  "shipped by": "Shipped by",
+  "package": "Package",
+  "edit": "Edit",
+  "confirm order": "Confirm Order",
+  "order": "Order",
+  "payment method": "Payment Method",
+  "payment on delivery": "Payment On Delivery"
 }

@@ -55,7 +55,7 @@ function Cart() {
               </Table>
             </Col>
             <Col lg={4}>
-              <OrderSummary />
+              <OrderSummary label="payment" link="/payment" />
             </Col>
           </Row>
         ) : (

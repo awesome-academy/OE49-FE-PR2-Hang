@@ -1,0 +1,14 @@
+@import "../../../style/style.scss";
+
+.form-check .form-check-input {
+  float: right;
+
+  &:checked {
+    background-color: $button-color;
+    border-color: $button-color;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
