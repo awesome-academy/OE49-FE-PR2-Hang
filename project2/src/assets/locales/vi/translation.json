@@ -56,5 +56,16 @@
   "confirm order": "Xác nhận đơn hàng",
   "order": "Đặt hàng",
   "payment method": "Phương thức thanh toán",
-  "payment on delivery": "Thanh toán khi nhận hàng"
+  "payment on delivery": "Thanh toán khi nhận hàng",
+  "my orders": "Đơn hàng của tôi",
+  "manage my account": "Quản lý tài khoản",
+  "my wishlist": "Sản phẩm yêu thích",
+  "processing": "Đang xử lý",
+  "delivered": "Đã giao",
+  "cancelled": "Đã hủy",
+  "status": "Trạng thái",
+  "save": "Lưu thay đổi",
+  "change password": "Đổi mật khẩu",
+  "current password": "Mật khẩu hiện tại",
+  "new password": "Mật khẩu mới"
 }

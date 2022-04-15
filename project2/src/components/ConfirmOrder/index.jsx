@@ -9,11 +9,14 @@ import { getDataFromLocalStorage } from "../../utils";
 
 function ConfirmOrder() {
   const dispatch = useDispatch();
-  const cart = getDataFromLocalStorage("cart");
-  const { products } = cart;
+  const { products } = getDataFromLocalStorage("cart");
+  const { id, username, email, phone, address } =
+    getDataFromLocalStorage("payment-info");
 
   const handleClick = () => {
-    dispatch(setOrder({ ...products }));
+    dispatch(
+      setOrder({ userId: id, username, email, phone, address, products })
+    );
     dispatch(deleteAllProduct());
   };
 
@@ -27,7 +30,7 @@ function ConfirmOrder() {
           </Col>
           <Col lg={4}>
             <PaymentMethod />
-            <OrderSummary label="order" link="/" onClick={handleClick} />
+            <OrderSummary label="order" link="/profile" onClick={handleClick} />
           </Col>
         </Row>
       </Container>

@@ -1,0 +1,13 @@
+@import "../../style/style.scss";
+
+.profile {
+  background-color: $background-color;
+
+  .nav-link {
+    color: $black-color;
+
+    &.active {
+      color: $button-color;
+    }
+  }
+}

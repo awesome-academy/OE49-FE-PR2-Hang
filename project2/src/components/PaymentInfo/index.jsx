@@ -38,7 +38,7 @@ function PaymentInfo() {
     onSubmit: () => {
       localStorage.setItem(
         "payment-info",
-        JSON.stringify({ ...formik.values })
+        JSON.stringify({ ...formik.values, id: user.id })
       );
       navigate("/confirm-order");
     },
