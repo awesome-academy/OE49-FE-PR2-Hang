@@ -6,8 +6,7 @@ import "./style.scss";
 function OrderSummary(props) {
   const { label, link, onClick } = props;
   const { t } = useTranslation();
-  const cart = getDataFromLocalStorage("cart");
-  const { products } = cart;
+  const { products } = getDataFromLocalStorage("cart");
   const total = totalMoney(products);
   const shippingFee = 30000;
 

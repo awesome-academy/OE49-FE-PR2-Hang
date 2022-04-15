@@ -43,7 +43,7 @@ function Login() {
       if (user) {
         localStorage.setItem(
           "user",
-          JSON.stringify({ username: user.username, email })
+          JSON.stringify({ id: user.id, username: user.username, email })
         );
         navigate("/");
       } else {

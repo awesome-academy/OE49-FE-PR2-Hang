@@ -56,5 +56,16 @@
   "confirm order": "Confirm Order",
   "order": "Order",
   "payment method": "Payment Method",
-  "payment on delivery": "Payment On Delivery"
+  "payment on delivery": "Payment On Delivery",
+  "my orders": "My Orders",
+  "manage my account": "Manage My Account",
+  "my wishlist": "My Wishlist",
+  "processing": "Processing",
+  "delivered": "Delivery",
+  "cancelled": "Cancelled",
+  "status": "Status",
+  "save": "Save Changes",
+  "change password": "Change password",
+  "current password": "Current password",
+  "new password": "New password"
 }

@@ -4,8 +4,7 @@ import { formatMoney, getDataFromLocalStorage } from "../../../utils";
 
 function CartInfo() {
   const { t } = useTranslation();
-  const cart = getDataFromLocalStorage("cart");
-  const { products } = cart;
+  const { products } = getDataFromLocalStorage("cart");
 
   const cartItem = (product) => {
     const { id, thumbnail, title, price, quantity } = product;
@@ -13,7 +12,7 @@ function CartInfo() {
     return (
       <tr key={id} className="cart__item">
         <td className="cart__image p-3">
-          <img src={thumbnail} alt="product" />
+          <img src={thumbnail} alt={title} />
         </td>
         <td className="cart__title">{title}</td>
         <td className="cart__price">{formatMoney(price)}</td>
