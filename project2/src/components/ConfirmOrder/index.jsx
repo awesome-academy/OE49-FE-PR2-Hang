@@ -18,6 +18,7 @@ function ConfirmOrder() {
       setOrder({ userId: id, username, email, phone, address, products })
     );
     dispatch(deleteAllProduct());
+    localStorage.removeItem("cart");
   };
 
   return (

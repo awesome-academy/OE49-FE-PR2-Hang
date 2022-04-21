@@ -11,8 +11,12 @@ import ModalComponent from "../Modal";
 import { totalProducts } from "../../utils";
 import { useToggle } from "../../hooks/useToggle";
 import OrderSummary from "./OrderSummary";
+import { useEffect, useState } from "react";
+import { auth } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Cart() {
+  const [isLogin, setIsLogin] = useState(false);
   const [show, setShow] = useToggle();
   const { products } = useSelector((state) => state.cartReducer);
   const total = totalProducts(products);
@@ -23,6 +27,12 @@ function Cart() {
     dispatch(deleteAllProduct());
     setShow(false);
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      user ? setIsLogin(true) : setIsLogin(false);
+    });
+  }, []);
 
   return (
     <section className="cart">
@@ -55,7 +65,10 @@ function Cart() {
               </Table>
             </Col>
             <Col lg={4}>
-              <OrderSummary label="payment" link="/payment" />
+              <OrderSummary
+                label="payment"
+                link={isLogin ? "/payment" : "/login"}
+              />
             </Col>
           </Row>
         ) : (

@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import PaymentInfo from "./components/PaymentInfo";
 import ConfirmOrder from "./components/ConfirmOrder";
 import Profile from "./components/Profile";
+import Admin from "./components/Admin";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/payment" element={<PaymentInfo />}></Route>
         <Route path="/confirm-order" element={<ConfirmOrder />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
       <Footer />
     </>

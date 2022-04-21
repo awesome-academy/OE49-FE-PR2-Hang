@@ -67,5 +67,9 @@
   "save": "Save Changes",
   "change password": "Change password",
   "current password": "Current password",
-  "new password": "New password"
+  "new password": "New password",
+  "login here": "Already member? Login here.",
+  "signup here": "New member? Register here.",
+  "manage orders": "Manage Orders",
+  "manage users": "Manage Users"
 }

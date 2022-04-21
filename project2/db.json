@@ -51,16 +51,32 @@
   ],
   "users": [
     {
-      "username": "hangvtt",
-      "email": "thuhang17122000@gmail.com",
+      "id": "ydDue5k3XrXMcplLJXkQ0QET7eU2",
+      "username": "admin",
+      "email": "admin@gmail.com",
       "password": "123123Aa",
-      "id": 1
+      "role": 0
     },
     {
-      "username": "tiendung1903",
-      "email": "dung@gmail.com",
-      "password": "dung123123A",
-      "id": 2
+      "id": "VcPJVydXjcfWS90jYssmNESXLEd2",
+      "username": "hangvtt",
+      "email": "thuhangg17122000@gmail.com",
+      "password": "123123Aa",
+      "role": 1
+    },
+    {
+      "id": "OJW57tb0BeMBdrxzbYhoQjyhFZf2",
+      "username": "180012122",
+      "email": "hihi@gmail.com",
+      "password": "123123Aa",
+      "role": 1
+    },
+    {
+      "id": "5SlUo7k9mcPjoJZehNFwK8421sC2",
+      "username": "hangvtt",
+      "email": "123@gmail.com",
+      "password": "123123Aa",
+      "role": 1
     }
   ],
   "products": [

@@ -3,23 +3,35 @@ import { Button, Container, Form, Row } from "react-bootstrap";
 import FormGroup from "../FormGroup";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { email_regex, password_regex } from "../../constants";
-import { useNavigate } from "react-router-dom";
+import { ADMIN_ROLE, email_regex, password_regex } from "../../constants";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllUsers } from "../../store/Slice/userSlice";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getUser } from "../../store/Slice/userSlice";
+import { auth } from "../../firebase";
 
 function Login() {
   const [errorLogin, setErrorLogin] = useState("");
-  const { users } = useSelector((state) => state.userReducer);
+  const { user } = useSelector((state) => state.userReducer);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(getAllUsers());
-  }, [dispatch]);
+    const { id, username, email, role } = user;
+
+    if (Object.keys(user).length) {
+      role === ADMIN_ROLE ? navigate("/admin") : navigate(-1);
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ id, username, email, role })
+      );
+    }
+  }, [user, navigate]);
 
   const formik = useFormik({
     initialValues: {
@@ -36,27 +48,24 @@ function Login() {
     }),
     onSubmit: () => {
       const { email, password } = formik.values;
-      const user = users.find(
-        (item) => item.email === email && item.password === password
-      );
 
-      if (user) {
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ id: user.id, username: user.username, email })
-        );
-        navigate("/");
-      } else {
-        setErrorLogin(t("error login"));
-      }
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const { uid } = userCredential.user;
+          dispatch(getUser(uid));
+        })
+        .catch(() => {
+          setErrorLogin(t("error login"));
+        });
     },
   });
 
   return (
     <div className="signup">
       <Container className="signup__wrap login__wrap">
-        <h1 className="signup__title pb-4">{t("welcome login")}</h1>
-        <Form onSubmit={formik.handleSubmit} className="signup__form">
+        <h1 className="signup__title pb-1">{t("welcome login")}</h1>
+        <Link to="/signup">{t("signup here")}</Link>
+        <Form onSubmit={formik.handleSubmit} className="signup__form mt-4">
           <p className="text-danger my-2">{errorLogin}</p>
           <Row>
             <FormGroup
