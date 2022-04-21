@@ -27,9 +27,9 @@ export const getAllUsers = createAsyncThunk("user/get", async () => {
   }
 });
 
-export const getOrders = createAsyncThunk("user/getOrders", async () => {
+export const getOrders = createAsyncThunk("user/getOrders", async (userId) => {
   try {
-    const res = await axios.get(ORDER_API_URL);
+    const res = await axios.get(ORDER_API_URL, { params: { userId } });
     return res.data;
   } catch (error) {
     return error;
