@@ -57,7 +57,11 @@ export const updateUser = createAsyncThunk("user/update", async (newUser) => {
 const userReducer = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.user = {};
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllUsers.pending, (state) => {
@@ -85,7 +89,7 @@ const userReducer = createSlice({
       .addCase(getUser.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getUser.fulfilled, (state,action) => {
+      .addCase(getUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
       })
@@ -105,4 +109,5 @@ const userReducer = createSlice({
   },
 });
 
+export const { logout } = userReducer.actions;
 export default userReducer.reducer;

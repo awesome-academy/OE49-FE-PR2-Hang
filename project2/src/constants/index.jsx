@@ -11,3 +11,6 @@ export const email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 export const password_regex =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
+
+export const ADMIN_ROLE = 0;
+export const USER_ROLE = 1;

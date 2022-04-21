@@ -9,19 +9,37 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Search from "../Filter/Search";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { totalProducts } from "../../utils";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { logout } from "../../store/Slice/userSlice";
+import { auth } from "../../firebase";
 
 function Header() {
   const { products } = useSelector((state) => state.cartReducer);
   const total = totalProducts(products);
+  const [isLogin, setIsLogin] = useState(false);
   const [language, setLanguage] = useState("en");
   const { i18n } = useTranslation();
+  const dispatch = useDispatch();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     language === "vi" ? setLanguage("en") : setLanguage("vi");
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      user ? setIsLogin(true) : setIsLogin(false);
+    });
+  }, []);
+
+  const handleLogout = () => {
+    signOut(auth);
+    dispatch(logout());
+    localStorage.removeItem("user");
+    localStorage.removeItem("payment-info");
   };
 
   return (
@@ -39,9 +57,14 @@ function Header() {
           <Link to="/cart" className="header__cart" data-total-cart={total}>
             <FontAwesomeIcon icon={faShoppingCart} />
           </Link>
-          <Link to="/signup">
+          <Link to={isLogin ? "/profile" : "/signup"}>
             <FontAwesomeIcon icon={faUser} />
           </Link>
+          {isLogin && (
+            <Link to="/" variant="outline" onClick={handleLogout}>
+              Log out
+            </Link>
+          )}
         </div>
       </header>
     </div>

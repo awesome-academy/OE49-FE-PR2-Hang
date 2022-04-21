@@ -3,16 +3,21 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import FormGroup from "../FormGroup";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { email_regex, password_regex } from "../../constants";
+import { email_regex, password_regex, USER_ROLE } from "../../constants";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/Slice/userSlice";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import "../../firebase";
+import { useState } from "react";
+import { auth } from "../../firebase";
 
 function SignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [errorSignUp, setErrorSignUp] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -36,21 +41,40 @@ function SignUp() {
         .oneOf([Yup.ref("password")], t("error confirm password"))
         .required(t("required information")),
     }),
+
     onSubmit: (values) => {
       const { username, email, password } = values;
-      localStorage.setItem("user", JSON.stringify({ username, email }));
-      dispatch(signup({ username, email, password }));
-      navigate('/login');
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ id: user.uid, username, email, role: USER_ROLE })
+          );
+
+          dispatch(
+            signup({ id: user.uid, username, email, password, role: USER_ROLE })
+          );
+          navigate("/");
+        })
+        .catch((error) => {
+          setErrorSignUp(error.message);
+        });
     },
   });
 
   return (
     <div className="signup">
       <Container className="signup__wrap">
+        <Link to="/login" className="float-end">
+          {t("login here")}
+        </Link>
         <h1 className="signup__title pb-4">{t("create account")}</h1>
         <Form onSubmit={formik.handleSubmit} className="signup__form">
           <Row>
             <Col md={6}>
+              <p className="text-danger pb-1">{errorSignUp}</p>
               <FormGroup
                 label="Email*"
                 id="email"
