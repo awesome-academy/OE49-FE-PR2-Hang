@@ -71,5 +71,6 @@
   "login here": "Bạn đã có tài khoản? Đăng nhập tại đây.",
   "signup here": "Bạn chưa có tài khoản? Đăng ký tại đây.",
   "manage orders": "Quản lý đơn hàng",
-  "manage users": "Quản lý người dùng"
+  "manage users": "Quản lý người dùng",
+  "no orders": "Chưa có đơn hàng"
 }

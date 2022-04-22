@@ -71,5 +71,6 @@
   "login here": "Already member? Login here.",
   "signup here": "New member? Register here.",
   "manage orders": "Manage Orders",
-  "manage users": "Manage Users"
+  "manage users": "Manage Users",
+  "no orders": "No Orders"
 }

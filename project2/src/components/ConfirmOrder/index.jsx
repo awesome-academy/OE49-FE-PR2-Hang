@@ -15,7 +15,7 @@ function ConfirmOrder() {
 
   const handleClick = () => {
     dispatch(
-      setOrder({ userId: id, username, email, phone, address, products })
+      setOrder({ userId: id, username, email, phone, address, products, status: "Pending" })
     );
     dispatch(deleteAllProduct());
     localStorage.removeItem("cart");
