@@ -1,0 +1,54 @@
+@import "../../style/style.scss";
+
+.product-detail {
+  background-color: $background-color;
+  padding-bottom: 10px;
+
+  .product-content {
+    background-color: $white-color;
+  }
+
+  input {
+    width: 50px;
+    padding: 5px;
+  }
+
+  .product {
+    &__images {
+      .prev,
+      .next {
+        display: none;
+      }
+
+      .fade:not(.show) {
+        opacity: 1;
+      }
+
+      .active-thumbnail {
+        border-color: $button-color;
+      }
+    }
+
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__price {
+      font-size: 1.6rem;
+    }
+
+    &__cart {
+      background-color: $button-color;
+      color: $white-color;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.fade {
+  animation: none !important;
+}
+
+.active {
+  background-color: unset !important;
+}

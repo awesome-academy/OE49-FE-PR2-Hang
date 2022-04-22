@@ -25,14 +25,13 @@ const cartReducer = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const { products } = state;
-      const productIndex = products.findIndex(
-        (item) => item.id === action.payload.id
-      );
+      const { id, quantity } = action.payload;
+      const productIndex = products.findIndex((item) => item.id === id);
 
       if (productIndex !== -1) {
-        products[productIndex].quantity += 1;
+        products[productIndex].quantity += quantity || 1;
       } else {
-        products.push({ ...action.payload, quantity: 1 });
+        products.push({ ...action.payload, quantity: quantity || 1 });
       }
     },
 
@@ -54,7 +53,7 @@ const cartReducer = createSlice({
       state.products = [];
     },
   },
-  
+
   extraReducers: (builder) => {
     builder
       .addCase(setOrder.pending, (state) => {
