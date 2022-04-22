@@ -10,6 +10,7 @@ import PaymentInfo from "./components/PaymentInfo";
 import ConfirmOrder from "./components/ConfirmOrder";
 import Profile from "./components/Profile";
 import Admin from "./components/Admin";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/confirm-order" element={<ConfirmOrder />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/products/:id" element={<ProductDetail />}></Route>
       </Routes>
       <Footer />
     </>

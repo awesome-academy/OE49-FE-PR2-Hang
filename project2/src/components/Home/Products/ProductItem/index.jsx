@@ -20,11 +20,11 @@ function ProductItem(props) {
   return (
     <div className="col">
       <div className="product__item">
-        <Link to="/">
+        <Link to={`/products/${id}`} state={props}>
           <img src={thumbnail} alt="product" className="product__image" />
         </Link>
         <div className="product__content p-3">
-          <Link to="/" className="product__title py-1">
+          <Link to={`/products/${id}`} state={props} className="product__title py-1">
             {title}
           </Link>
           <div className="product__price py-2">{formatMoney(price)}</div>
