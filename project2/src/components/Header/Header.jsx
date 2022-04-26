@@ -15,14 +15,21 @@ import { totalProducts } from "../../utils";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { logout } from "../../store/Slice/userSlice";
 import { auth } from "../../firebase";
+import { ADMIN_ROLE } from "../../constants";
 
 function Header() {
   const { products } = useSelector((state) => state.cartReducer);
+  const { user } = useSelector((state) => state.userReducer);
   const total = totalProducts(products);
   const [isLogin, setIsLogin] = useState(false);
   const [language, setLanguage] = useState("en");
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
+  const userLink = isLogin
+    ? user.role === ADMIN_ROLE
+      ? "/admin"
+      : "/profile"
+    : "/login";
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -57,12 +64,16 @@ function Header() {
           <Link to="/cart" className="header__cart" data-total-cart={total}>
             <FontAwesomeIcon icon={faShoppingCart} />
           </Link>
-          <Link to={isLogin ? "/profile" : "/signup"}>
+          <Link to={userLink}>
             <FontAwesomeIcon icon={faUser} />
           </Link>
-          {isLogin && (
+          {isLogin ? (
             <Link to="/" variant="outline" onClick={handleLogout}>
               Log out
+            </Link>
+          ) : (
+            <Link to="/login" variant="outline">
+              Log in
             </Link>
           )}
         </div>

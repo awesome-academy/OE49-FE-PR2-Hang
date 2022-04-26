@@ -72,7 +72,17 @@
   "signup here": "New member? Register here.",
   "manage orders": "Manage Orders",
   "manage users": "Manage Users",
-  "add to cart": "Add to Cart",
-  "home": "Home",
-  "no orders": "No Orders"
+  "no orders": "No Orders",
+  "manage products": "Manage Products",
+  "no products": "No Products",
+  "actions": "Actions",
+  "description": "Description",
+  "image": "Image",
+  "title": "Title",
+  "delete product": "Delete Product",
+  "confirm delete product": "Are you sure to delete this product?",
+  "add product": "Add Product",
+  "related products": "Related Products",
+  "notification": "Notification",
+  "add product success": "Add Product Success"
 }
