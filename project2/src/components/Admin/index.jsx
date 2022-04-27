@@ -2,7 +2,7 @@ import "./style.scss";
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import ManageOrders from "./ManageOrders";
-import ManageUsers from "./ManageUsers";
+import ManageProducts from "./ManageProducts";
 
 function Admin() {
   const { t } = useTranslation();
@@ -10,18 +10,18 @@ function Admin() {
   return (
     <div className="profile py-3">
       <Container>
-        <Tab.Container id="admin" defaultActiveKey="orders">
+        <Tab.Container id="admin" defaultActiveKey="products">
           <Row>
             <Col sm={2}>
               <Nav className="flex-column">
                 <Nav.Item>
-                  <Nav.Link className="ps-0" eventKey="orders">
-                    {t("manage orders")}
+                  <Nav.Link className="ps-0" eventKey="products">
+                    {t("manage products")}
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="ps-0" eventKey="users">
-                    {t("manage users")}
+                  <Nav.Link className="ps-0" eventKey="orders">
+                    {t("manage orders")}
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
@@ -31,8 +31,8 @@ function Admin() {
                 <Tab.Pane eventKey="orders">
                   <ManageOrders />
                 </Tab.Pane>
-                <Tab.Pane eventKey="users">
-                  <ManageUsers />
+                <Tab.Pane eventKey="products">
+                  <ManageProducts />
                 </Tab.Pane>
               </Tab.Content>
             </Col>

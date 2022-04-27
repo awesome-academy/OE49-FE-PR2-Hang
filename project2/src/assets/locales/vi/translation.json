@@ -74,5 +74,17 @@
   "manage users": "Quản lý người dùng",
   "add to cart": "Thêm vào giỏ hàng",
   "home": "Trang chủ",
-  "no orders": "Chưa có đơn hàng"
+  "no orders": "Chưa có đơn hàng",
+  "manage products": "Quản lý sản phẩm",
+  "no products": "Chưa có sản phẩm",
+  "actions": "Thao tác",
+  "description": "Mô tả",
+  "image": "Hình ảnh",
+  "title": "Tên sản phẩm",
+  "delete product": "Xóa sản phẩm",
+  "confirm delete product": "Bạn có chắc chắn xóa sản phẩm này không?",
+  "add product": "Thêm sản phẩm",
+  "related products": "Sản phẩm liên quan",
+  "notification": "Thông báo",
+  "add product success": "Thêm vào giỏ hàng thành công"
 }

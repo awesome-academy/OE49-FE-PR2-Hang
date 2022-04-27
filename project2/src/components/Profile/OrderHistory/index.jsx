@@ -76,7 +76,7 @@ function OrderHistory() {
   return (
     <div className="orders cart">
       <h2 className="orders__title fs-5 mb-3">{t("my orders")}</h2>
-      <Tabs defaultActiveKey="all" id="orders" className="bg-light mb-3">
+      <Tabs defaultActiveKey="processing" id="orders" className="bg-light mb-3">
         <Tab eventKey="all" title={t("all products")}>
           {orderList("")}
         </Tab>

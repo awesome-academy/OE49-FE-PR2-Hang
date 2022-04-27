@@ -10,7 +10,7 @@ function Profile() {
   return (
     <div className="profile py-3">
       <Container>
-        <Tab.Container id="profile" defaultActiveKey="account">
+        <Tab.Container id="profile" defaultActiveKey="orders">
           <Row>
             <Col sm={2}>
               <Nav className="flex-column">

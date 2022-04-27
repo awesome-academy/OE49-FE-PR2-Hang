@@ -49,6 +49,45 @@ export const fetchBrands = createAsyncThunk(
   }
 );
 
+export const addProduct = createAsyncThunk(
+  "products/addProduct",
+  async (product) => {
+    try {
+      const res = await axios.post(PRODUCT_API_URL, product);
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
+export const editProduct = createAsyncThunk(
+  "products/editProduct",
+  async (newProduct) => {
+    try {
+      const res = await axios.patch(
+        `${PRODUCT_API_URL}/${newProduct.id}`,
+        newProduct
+      );
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
+export const deleteProduct = createAsyncThunk(
+  "products/deleteProduct",
+  async (id) => {
+    try {
+      const res = await axios.delete(`${PRODUCT_API_URL}/${id}`);
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
 const productReducer = createSlice({
   name: "products",
   initialState,
@@ -86,7 +125,7 @@ const productReducer = createSlice({
     },
 
     sortProducts: (state, action) => {
-      const {sort, order} = action.payload;
+      const { sort, order } = action.payload;
       state.filter._sort = sort;
       state.filter._order = order;
     },
@@ -127,6 +166,36 @@ const productReducer = createSlice({
         state.brands = brands;
       })
       .addCase(fetchBrands.rejected, (state) => {
+        state.isLoading = false;
+      })
+
+      .addCase(addProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addProduct.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(addProduct.rejected, (state) => {
+        state.isLoading = false;
+      })
+
+      .addCase(editProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(editProduct.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(editProduct.rejected, (state) => {
+        state.isLoading = false;
+      })
+
+      .addCase(deleteProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteProduct.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(deleteProduct.rejected, (state) => {
         state.isLoading = false;
       });
   },
